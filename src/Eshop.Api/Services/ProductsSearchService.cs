@@ -9,6 +9,15 @@ public class ProductsSearchService
         "Keychron K3 V2"
     };
 
+    public async Task<IEnumerable<Product>> SearchAsync() {
+        var products = Enumerable.Range(0, 4).Select(index => new Product
+        {
+            Name = Names[index]
+        })
+        .ToArray();
+        return await Task.FromResult(products);
+    }
+
     public async Task<IEnumerable<Product>> SearchAsync(ProductsSearchRequest request) {
         var products = Enumerable.Range(0, 4).Select(index => new Product
         {
