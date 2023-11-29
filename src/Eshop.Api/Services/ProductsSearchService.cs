@@ -15,6 +15,8 @@ public class ProductsSearchService
             Name = Names[index]
         })
         .Where(p => string.IsNullOrEmpty(request.Name) || p.Name.Contains(request.Name, StringComparison.InvariantCultureIgnoreCase))
+        .Skip((request.Page - 1) * request.PageSize)
+        .Take(request.PageSize)
         .ToArray();
         return await Task.FromResult(products);
     }
