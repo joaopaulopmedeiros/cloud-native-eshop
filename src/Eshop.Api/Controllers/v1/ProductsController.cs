@@ -1,7 +1,7 @@
 namespace Eshop.Api.Controllers;
 
 [ApiController]
-[Route("v{version:apiVersion}/[controller]")]
+[Route("v1/[controller]")]
 [ApiVersion("1.0")]
 public class ProductsController : ControllerBase
 {
