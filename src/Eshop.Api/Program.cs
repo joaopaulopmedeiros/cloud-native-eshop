@@ -40,7 +40,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseMetricServer();
+app.UseHttpMetrics();
 
 app.MapMetrics();
 

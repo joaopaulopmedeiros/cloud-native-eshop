@@ -478,3 +478,6 @@ $RECYCLE.BIN/
 
 # .vscode
 .vscode/*
+
+# grafana
+grafana-data/*
