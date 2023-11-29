@@ -1,7 +1,8 @@
 namespace Eshop.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class ProductsController : ControllerBase
 {
     private static readonly string[] Names = new[]
