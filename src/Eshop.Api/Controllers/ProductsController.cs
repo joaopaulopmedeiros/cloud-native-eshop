@@ -1,14 +1,13 @@
-namespace Eshop.Api.Controllers.v2;
+namespace Eshop.Api.Controllers.v1;
 
 [ApiController]
-[Route("v{version:apiVersion}/[controller]")]
-[ApiVersion("2.0")]
+[Route("[controller]")]
 public class ProductsController : ControllerBase
 {
     [HttpGet]
-    public async Task<IEnumerable<Product>> SearchAsync2
+    public async Task<IEnumerable<Product>> SearchAsync
     (
-        [FromQuery] ProductsSearchRequest request, 
+        [FromQuery] ProductsSearchRequest request,
         [FromServices] ProductsSearchService service
     )
     {
