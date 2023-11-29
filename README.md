@@ -1,19 +1,24 @@
 # Eshop
 
-## Introduction
+## Description
 This repository addresses a cloud native aspnet core web api.
 
-## Documentation
-Find out api endpoints and make requests in ease per each available version with <b>Swagger UI</b>.
+## Tech Stack
+- .NET;
+- Prometheus;
+- Grafana;
+- Docker.
 
-<img src="./docs/screenshot-swagger-ui.png" />
+## How to run
+Execute the command:
+```
+docker-compose up
+```
 
-## Containerization
-The service can get executed in any hosted OS because of <b>docker</b> support.
-<img src="./docs/screenshot-docker-desktop.png"/>
+Need to install docker? Click [here](https://docs.docker.com/engine/install/).
 
-## Observability
-The api supports <b>Prometheus</b>.
+# Results
+<img src="./docs/screenshot-docker-desktop.png" />
 <img src="./docs/screenshot-dashboard-prometheus.png" />
-Access occurs in /metrics.
+<img src="./docs/screenshot-swagger-ui.png" />
 <img src="./docs/screenshot-metrics-prometheus.png" />
