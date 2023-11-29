@@ -5,25 +5,14 @@ namespace Eshop.Api.Controllers;
 [ApiVersion("1.0")]
 public class ProductsController : ControllerBase
 {
-    private static readonly string[] Names = new[]
+    [HttpGet]
+    public async Task<IEnumerable<Product>> SearchAsync
+    (
+        [FromQuery] ProductsSearchRequest request, 
+        [FromServices] ProductsSearchService service
+    )
     {
-        "PS5", "Xbox One", "Iphone", "Monitor LG Ultrawide"
-    };
-
-    private readonly ILogger<ProductsController> _logger;
-
-    public ProductsController(ILogger<ProductsController> logger)
-    {
-        _logger = logger;
-    }
-
-    [HttpGet(Name = "GetProducts")]
-    public IEnumerable<Product> Get()
-    {
-        return Enumerable.Range(0, 4).Select(index => new Product
-        {
-            Name = Names[index]
-        })
-        .ToArray();
+        var products = await service.SearchAsync(request);
+        return products;
     }
 }

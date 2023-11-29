@@ -16,6 +16,7 @@ builder.Services.AddVersionedApiExplorer(setup =>
     setup.GroupNameFormat = "'v'VVV";
     setup.SubstituteApiVersionInUrl = true;
 });
+builder.Services.AddSingleton<ProductsSearchService>();
 
 var app = builder.Build();
 
